@@ -1,0 +1,48 @@
+<template>
+	<div>
+		
+		<scroll-view style=" background-color: gray" @scroll="onScroll">
+			<div style="height: 200px; background-color: lightgray" @touchstart="onTouchStart" @touchmove="onTouchMove"
+				@touchend="onTouchEnd" @touchcancel="onTouchCancel"></div>
+			<div style="height: 200px; background-color: lightpink" @tap="tapGray">
+			</div>
+			<div style="height: 200px; background-color: lightgreen" @click='onClick'></div>
+			<div style="height: 900px; background-color: lightblue" @longpress="onLongPress"></div>
+		</scroll-view>
+	</div>
+</template>
+<script lang='uts'>
+	export default {
+		data() {
+			return {
+				message: '2'
+			}
+		},
+		methods: {
+			tapGray(e: MouseEvent) {
+				console.log('gray', e)
+			},
+			onLongPress(e: MouseEvent) {
+				console.log('long press', e)
+			},
+			onClick(e: MouseEvent) {
+				console.log('click', e)
+			},
+			onTouchStart(e: TouchEvent) {
+				console.log("onTouchStart", e.target);
+			},
+			onTouchMove(e: TouchEvent) {
+				console.log("onTouchMove", e.changedTouches, e.touches);
+			},
+			onTouchEnd(e: TouchEvent) {
+				console.log("onTouchEnd", e);
+			},
+			onTouchCancel(e: TouchEvent) {
+				console.log("onTouchCancel", e);
+			},
+			onScroll(e: ScrollEvent) {
+				console.log("onScroll", e.detail);
+			},
+		},
+	};
+</script>

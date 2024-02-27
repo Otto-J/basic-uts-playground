@@ -1,0 +1,86 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/simple",
+			"style": {
+				"navigationBarTitleText": "simple"
+			}
+		},
+		{
+			"path": "pages/index/view-hover",
+			"style": {
+				"navigationBarTitleText": "view-hover"
+			}
+		},
+		{
+			"path": "pages/form-comp/input",
+			"style": {
+				"navigationBarTitleText": "input"
+			}
+		},
+
+		{
+			"path": "pages/index/picker-view",
+			"style": {
+				"navigationBarTitleText": "page1"
+			}
+		},
+
+		{
+			"path": "pages/index/button",
+			"style": {
+				"navigationBarTitleText": "page1"
+			}
+		},
+
+		{
+			"path": "pages/index/page1",
+			"style": {
+				"navigationBarTitleText": "page1"
+			}
+		},
+		{
+			"path": "pages/index/page2",
+			"style": {
+				"navigationBarTitleText": "page2"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app x",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#007aff",
+		"selectedColor": "#09BB07",
+		"backgroundColor": "#ffffff",
+		"borderStyle": "white",
+		"blurEffect": "dark",
+		"position": "bottom",
+		"fontSize": "10px",
+		"iconWidth": "24px",
+		"spacing": "3px",
+		"height": "50px",
+		"redDotColor": "#ff0000",
+		"list": [{
+				"pagePath": "pages/index/page1",
+				"text": "page1",
+				"iconPath": "static/logo.png",
+				"selectedIconPath": "static/icon1.png"
+			}, {
+				"pagePath": "pages/index/view-hover",
+				"text": "ViewHover",
+				"iconPath": "static/icon0.png",
+				"selectedIconPath": "static/icon1.png"
+			},
+			{
+				"pagePath": "pages/index/button",
+				"text": "button",
+				"iconPath": "static/icon0.png",
+				"selectedIconPath": "static/icon1.png"
+			}
+		]
+	}
+}

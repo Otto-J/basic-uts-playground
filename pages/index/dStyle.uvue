@@ -1,0 +1,51 @@
+<template>
+
+	<view @click='changeColor2'>
+
+		<view>
+			<text style='line-height: 3.5;color:#fff;background-color:lightcoral'>text2</text>
+		</view>
+		<view>
+			<text style='line-height: 3;color:#fff;background-color:lightgreen'>text2</text>
+		</view>
+		<text ref='textRef' :style='aColor'>当前的颜色 {{aColor.color}}-{{aColor.backgroundColor}} </text>
+		<text ref='textRef' :style='bColor'>当前的颜色 {{bColor}} </text>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				aColor: {
+					color: 'red',
+					backgroundColor: 'lightgreen'
+				},
+				bColor: "color:red;background-color:lightgreen"
+			}
+		},
+		methods: {
+
+			changeColor2() {
+				this.bColor = this.bColor === 'color:red;background-color:lightgreen' ? 'color:blue;background-color:red' : 'color:red;background-color:lightgreen'
+				// this.aColor.color = this.aColor.color === 'red' ? 'lightgreen' : 'red' // color[index]
+				// this.aColor.backgroundColor = this.aColor.backgroundColor === 'red' ? 'lightgreen' : 'red'// color[index2]
+
+				this.aColor = this.aColor.color === 'red' ? {
+					color: 'lightgreen',
+					backgroundColor: 'red'
+				} : {
+					color: 'red',
+					backgroundColor: 'lightgreen'
+				}
+				// console.log(22,this.$refs.textRef.style)
+				// this.$refs.textRef.style.setProperty('color', 'blue')
+			},
+
+		}
+	}
+</script>
+
+<style>
+
+</style>

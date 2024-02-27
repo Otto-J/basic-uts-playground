@@ -1,0 +1,115 @@
+<template>
+	<view class="uni-padding-wrap uni-common-mt">
+		<view>
+			<text style="border:1px solid red;width:150px;height: 50px;">{{title}}</text>
+		</view>
+		<view class="">
+			<input :value='title' type="text" />
+		</view>
+		<text>input2</text>
+		<input :value='title' @input="onInput" type="text" />
+
+		<view>
+			<button @click='setTabBarBadge'>点击 setTabBarBadge</button>
+			<button @click='removeTabBarBadge'>removeTabBarBadge</button>
+			<button @click='setTabBarItem'>动态设置 tabbar</button>
+			<button @click='setTabBarStyle'>setTabBarStyle</button>
+			<button @click='showTabBar'>showTabBar</button>
+			<button @click='hideTabBar'>hideTabBar</button>
+			<button @click='showTabBarRedDot'>showTabBarRedDot</button>
+			<button @click='hideTabBarRedDot'>hideTabBarRedDot</button>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: 'input element.',
+				tabBar0: '我'
+			}
+		},
+		methods: {
+			setTabBarBadge() {
+				uni.setTabBarBadge({
+					index: 0,
+					text: '1'
+				})
+			},
+			removeTabBarBadge() {
+				uni.removeTabBarBadge({
+					index: 0
+				})
+			},
+			setTabBarItem() {
+				uni.setTabBarItem({
+					index: 0,
+					text: this.tabBar0 === '我' ? '我' : '他2',
+				})
+				this.tabBar0 = this.tabBar0 === '我' ? '他2' : '我'
+			},
+			setTabBarStyle() {
+				uni.setTabBarStyle({
+					color: '#FF0000',
+					selectedColor: '#00FF00',
+					backgroundColor: '#00ccFF',
+					borderStyle: 'black'
+				})
+			},
+			showTabBar() {
+				uni.showTabBar()
+			},
+			hideTabBar() {
+				uni.hideTabBar()
+			},
+			showTabBarRedDot() {
+				uni.showTabBarRedDot({
+					index: 0
+				})
+			},
+			hideTabBarRedDot() {
+				uni.hideTabBarRedDot({
+					index: 0
+				})
+			},
+
+			onclick() {
+				console.log(3)
+			},
+			onInput(e : InputEvent) {
+				console.log('input', e)
+				const _val = e.detail.value
+				this.title = _val
+			},
+			goC() {
+				console.log('goC')
+			},
+			onts() {
+				// console.log(333)
+			}
+		},
+		mounted() {
+		}
+	}
+</script>
+
+<style>
+	.navigator {
+		margin-bottom: 15px;
+	}
+
+	.navigator-wrap,
+	.navigator-wrap:link,
+	.navigator-wrap:visited,
+	.navigator-wrap:hover,
+	.navigator-wrap:active {
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.navigator {
+		margin-bottom: 15px;
+	}
+</style>

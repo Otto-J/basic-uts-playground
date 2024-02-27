@@ -1,0 +1,64 @@
+<template>
+	<view class="uni-padding-wrap uni-common-mt">
+		<button type='primary' @click="goC" @touchstart="onts">222</button>
+		<navigator class="navigator navigate" url="page2?title=navigate">
+			<button type='primary'>跳转到新页面</button>
+		</navigator>
+		<navigator class="navigator navigate" url="page2?title=navigate">
+			<text>跳转到新页面333</text>
+		</navigator>
+		<navigator class="navigator redirect" url="page2?title=redirect" open-type="redirect">
+			123
+		</navigator>
+		
+		<view>
+			<text style="border:1px solid red;width:150px;">input2</text>
+			<input style="background-color: lightblue;border:1px solid red;width:150px;" type="text" value="eee">
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: 'navigator'
+			}
+		},
+		methods: {
+			onclick() {
+				console.log(3)
+			},
+			goC() {
+				console.log('goC')
+			},
+			onts() {
+				// console.log(333)
+			}
+		},
+		mounted() {
+			const app = getApp()
+			console.log('mounted22', app)
+		}
+	}
+</script>
+
+<style>
+	.navigator {
+		margin-bottom: 15px;
+	}
+
+	.navigator-wrap,
+	.navigator-wrap:link,
+	.navigator-wrap:visited,
+	.navigator-wrap:hover,
+	.navigator-wrap:active {
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.navigator {
+		margin-bottom: 15px;
+	}
+</style>

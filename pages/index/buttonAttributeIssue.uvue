@@ -1,0 +1,25 @@
+<template>
+	<view>
+		<button type='primary'>primary</button>
+		
+		<button type='primary' :disabled="true">primary</button>
+		<button type='primary' :disabled="false" >primary</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+
+</style>

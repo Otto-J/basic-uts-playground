@@ -1,0 +1,108 @@
+<template>
+	<view>
+		<text>展示 checkbox group</text>
+
+		<checkbox-group name='demo2' class="uni-flex uni-row checkbox-group" @change="testChange" style="flex-wrap: wrap">
+			<checkbox value="cb" :checked="checked" color="red" style="margin-right: 15px" class="checkbox cb">选中
+			</checkbox>
+			<checkbox value="cb1" style="margin-right: 15px" class="checkbox cb1">345</checkbox>
+			<checkbox value="cb2" :disabled="true" class="checkbox cb2">禁用</checkbox>
+			<checkbox value="cb3" style="margin-top: 10px" class="checkbox cb3">
+				123
+			</checkbox>
+		</checkbox-group>
+		<text>普通 event</text>
+		<!-- <text>展示 checkbox 各种用法</text>
+		<checkbox v-model='checked'>
+			正常 toggle
+		</checkbox>
+		<view style="height: 10px;"></view>
+
+		<checkbox :disabled="true">
+			disable true
+		</checkbox>
+		<view style="height: 10px;"></view>
+		<checkbox :disabled="false">
+			disabled false
+		</checkbox>
+		<view style="height: 10px;"></view>
+		<checkbox color='#007AFF' background-color="#00ffbe" border-color="#fb0029" activeBackgroundColor="#2C405A"
+			active-border-color="#000000" icon-color="red" v-model='checked'>props 测试 </checkbox>
+		<view style="height: 10px;"></view> -->
+
+		<!-- @tap="checkbox_tap"
+			@longpress="checkbox_longpress" -->
+
+
+		<!-- @touchstart="checkbox_touchstart" @touchmove="checkbox_touchmove"
+				@touchcancel="checkbox_touchcancel" @touchend="checkbox_touchend" -->
+	<!-- 	<checkbox @click="checkbox_click">
+			事件
+		</checkbox> -->
+
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				checked: false
+			}
+		},
+		methods: {
+			testChange(e : MouseEvent) {
+				console.log('checkbox-group change', e)
+
+			},
+			// checkbox_click(e : TouchEvent) {
+			// 	console.log("checkbox_click", e)
+			// },
+			checkbox_touchstart(e : TouchEvent) {
+				console.log("checkbox_touchstart", e)
+			},
+			checkbox_touchmove(e : TouchEvent) {
+				console.log("checkbox_touchmove", e)
+			},
+			checkbox_touchcancel(e : TouchEvent) {
+				console.log("checkbox_touchcancel", e)
+			},
+			checkbox_touchend(e : TouchEvent) {
+				console.log("checkbox_touchend", e)
+			},
+			checkbox_tap(e : MouseEvent) {
+				console.log("checkbox_tap", e)
+			},
+			checkbox_longpress(e : MouseEvent) {
+				console.log("checkbox_longpress", e)
+			},
+		}
+	}
+</script>
+
+<style>
+	.bg1 {
+		background-color: lightblue;
+	}
+
+	.bg2 {
+		background-color: lightpink;
+	}
+
+	.myBg {
+		height: 46px;
+		background-color: lightblue;
+	}
+
+	.button-hover1 {
+		background-color: lightpink;
+	}
+
+	.hover-class1 {
+		background-color: lightgreen;
+	}
+
+	.default-class1 {
+		background-color: lightblue;
+	}
+</style>

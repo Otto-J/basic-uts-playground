@@ -1,0 +1,73 @@
+<!-- 本示例未包含完整css，获取外链css请参考上文，在hello uni-app项目中查看 -->
+<template>
+	<view>
+
+		<scroll-view @refresherpulling='refresherpulling' @refresherrefresh='refresherrefresh'
+			@refresherrestore='refresherrestore' @refresherabort='refresherabort' @scroll='scroll'
+			@nestedprescroll='nestedprescroll' @stopnestedscroll='stopnestedscroll' @scrollend="scrollend"
+			style="height: 100px; border: 1px solid lightcoral;background-color: lightblue;">
+			<view style="height:20px;" v-for="item in 10" :key='item'>
+				<text style="color: red;border: 1px solid red;">{{item}}</text>
+			</view>
+		</scroll-view>
+	</view>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+			}
+		},
+		methods: {
+			refresherpulling() {
+				console.log('refresherpulling')
+			},
+			refresherrefresh() {
+				console.log('refresherrefresh')
+			},
+			refresherrestore() {
+				console.log('refresherrestore')
+			},
+			refresherabort() {
+				console.log('refresherabort')
+			},
+			scroll(e : UniScrollEvent) {
+				console.log('scroll', e)
+			},
+			scrolltoupper() {
+				console.log('scrolltoupper')
+			},
+			scrolltolower() {
+				console.log('scrolltolower')
+			},
+			startnestedscroll() {
+				console.log('startnestedscroll')
+			},
+			nestedprescroll() {
+				console.log('nestedprescroll')
+			},
+			stopnestedscroll() {
+				console.log('stopnestedscroll')
+			},
+			scrollend(e : UniScrollEvent) {
+				console.log('scrollend', e)
+			}
+		}
+	}
+</script>
+<style>
+	.picker-view {
+		width: 100%;
+		height: 320px;
+		margin-top: 10px;
+	}
+
+	.item {
+		height: 50px;
+	}
+
+	.text {
+		line-height: 50px;
+		text-align: center;
+	}
+</style>

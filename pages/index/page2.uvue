@@ -1,0 +1,27 @@
+<template>
+	<view>
+		<text>page2</text>
+		<navigator open-type="navigateBack">新页面跳转来的，返回去</navigator>
+
+		<navigator animation-type='auto' url="page1?title=redirect" open-type="redirect">
+			普通 redirect
+		</navigator>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+
+</style>

@@ -1,0 +1,103 @@
+<template>
+	<view>
+
+		<view>
+			<text class='bg1'>123</text>
+		</view>
+		<view>
+			<text style='line-height: 3.5;color:#fff;background-color:lightcoral'>text2</text>
+		</view>
+		<view>
+			<text style='line-height: 3;color:#fff;background-color:lightgreen'>text2</text>
+		</view>
+
+
+		<!-- <view>
+			<text>button 展示</text>
+		</view> -->
+
+		<scroll-view class='button-list'>
+			<text @click="changeType">type3: {{currentType}}</text>
+			<view class="myBg" style=""></view>
+			<button class="mybtn" @click="changeType" :type='currentType'>点击切换类型</button>
+			<view style="height: 10px;"></view>
+			<button type='primary'>primary</button>
+			<button type='primary' :disabled="true">primary</button>
+			<button type='primary' :plain="true" :disabled="true">primary</button>
+			<button type='primary' :plain="false" :disabled="true">primary</button>
+			<button type='warn'>warn</button>
+			<button type='warn' :disabled="true">warn</button>
+			<!-- <button disabled>disabled</button> -->
+			<button class="mybtn" type='primary' :plain='true' :disabled='true'>disabled=true</button>
+			<view style="height: 10px;"></view>
+			<button :disabled='false'>disabled=false</button>
+			<button hover-class='button-hover1'>自定义hover</button>
+			<view style="height: 10px;"></view>
+			<button hover-class='button-hover'>button-hover</button>
+			<view style="height: 10px;"></view>
+			<button hover-class='none'>无hover</button>
+			<view style="height: 10px;"></view>
+			<button>普通 hover class</button>
+			<view style="height: 10px;"></view>
+			<button :hover-start-time="2000">2000ms hover start</button>
+			<view style="height: 10px;"></view>
+			<button>20ms hover start</button>
+			<view style="height: 10px;"></view>
+			<button :hover-stay-time="2000">2000ms hover stay time</button>
+			<view style="height: 10px;"></view>
+			<button> 70ms hover stay time</button>
+			<view style="height: 10px;"></view>
+			<button size='mini'>mini</button>
+		</scroll-view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				val: 0,
+				currentType: 'warn',
+				ttColor: 'red'
+			}
+		},
+		methods: {
+			changeColor() {
+				// console.log('changeColor')
+				// const color = ['red', 'blue', 'green', '#fff']
+				// const currentIndex = color.findIndex((item : string) => item === this.ttColor)
+				// const index = currentIndex === color.length - 1 ? 0 : currentIndex + 1
+				// this.ttColor = color[index]
+				// console.log(this.ttColor)
+			},
+			changeType() {
+				// console.log('changeType')
+				// const type22 = ['default', 'warn333', 'warn', 'primary']
+				// const currentIndex = type22.findIndex((item : string) => item === this.currentType)
+				// const index = currentIndex === type22.length - 1 ? 0 : currentIndex + 1
+				// const next = type22[index]
+				// // console.log('next', next)
+				// this.currentType = next
+			},
+			onChange(e : SliderChangeEvent) {
+				console.log('changed', e)
+			},
+			onChanging(e : SliderChangeEvent) {
+				console.log('正在拖动', e)
+			},
+			onTap() {
+				this.val += 1
+			}
+		}
+	}
+</script>
+
+<style>
+	.button-hover1 {
+		background-color: #000000;
+	}
+
+	.bg1 {
+		background-color: #000000;
+	}
+</style>

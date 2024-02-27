@@ -1,0 +1,155 @@
+<template>
+	<scroll-view class="scroll-view">
+		<view class="page">
+			<form @submit="onFormSubmit" @reset="onFormReset">
+
+				<view class="uni-form-item">
+					<view class="title">
+						<text>姓名</text>
+					</view>
+					<input style="width: 100px;height:50px;background-color: royalblue" class="uni-input" name="nickname"
+						@input='onInput' :value="nickname" placeholder="请输入姓名" />
+				</view>
+
+
+				<view class="uni-form-item">
+					<view class="title">
+						<text>性别</text>
+					</view>
+					<radio-group name="gender" class="flex-row">
+						<view class="group-item">
+							<radio value="0" :checked="gender=='0'" /><text>男</text>
+						</view>
+						<view class="group-item">
+							<radio value="1" :checked="gender=='1'" /><text>女</text>
+						</view>
+					</radio-group>
+				</view>
+
+				<view class="uni-form-item">
+					<view class="title">
+						<text>爱好</text>
+					</view>
+					<checkbox-group name="loves" class="flex-row">
+						<view class="group-item">
+							<checkbox value="3" :checked="loves.indexOf('3')>-1" /><text>读书</text>
+						</view>
+						<view class="group-item">
+							<checkbox value="4" :checked="loves.indexOf('4')>-1" /><text>写字</text>
+						</view>
+					</checkbox-group>
+				</view>
+
+				<view class="uni-form-item">
+					<view class="title">
+						<text>年龄</text>
+					</view>
+					<slider name="age" :value="age" :show-value="true"></slider>
+				</view>
+
+				<view class="uni-form-item">
+					<view class="title">
+						<text>保留选项</text>
+					</view>
+					<view>
+						<switch name="switch" :checked="switch" />
+					</view>
+				</view>
+
+				<view class="uni-btn-v flex-row">
+					<button class="btn btn-submit" form-type="submit" type="primary">Submit</button>
+					<button class="btn btn-reset" type="default" form-type="reset">Reset</button>
+				</view>
+			</form>
+
+			<view class="result">提交的表单数据</view>
+			<text>{{ formDataText}}</text>
+		</view>
+	</scroll-view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				nickname: '',
+				gender: '0',
+				age: 18,
+				loves: ['3'],
+				progress1: 50,
+				switch: true,
+				formData: {} as UTSJSONObject
+			}
+		},
+		computed: {
+			formDataText() : string {
+				return JSON.stringify(this.formData)
+			},
+			formDataStr() : string {
+				return JSON.stringify(this.formData)
+			}
+		},
+		methods: {
+			onFormSubmit: function (e : UniFormSubmitEvent) {
+				this.formData = e.detail.value
+			},
+			onFormReset: function (_ : UniFormResetEvent) {
+				this.formData = {}
+			},
+			onInput(e : InputEvent) {
+				const val = e.detail.value
+				console.log(e, val)
+				this.nickname = e.detail.value
+			}
+		}
+	}
+</script>
+
+<style>
+	.scroll-view {
+		flex: 1;
+	}
+
+	.page {
+		padding: 15px;
+	}
+
+	.flex-row {
+		flex-direction: row;
+	}
+
+	.uni-form-item {
+		padding: 15px 0;
+	}
+
+	.title {
+		margin-bottom: 10px;
+	}
+
+	.group-item {
+		flex-direction: row;
+		margin-right: 20px;
+	}
+
+	.btn {
+		flex: 1;
+	}
+
+	.btn-submit {
+		margin-right: 5px;
+	}
+
+	.btn-reset {
+		margin-left: 5px;
+	}
+
+	.result {
+		margin-top: 30px;
+	}
+
+	.textarea {
+		margin-top: 5px;
+		padding: 5px;
+		background-color: #fff;
+	}
+</style>

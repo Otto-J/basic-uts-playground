@@ -1,0 +1,77 @@
+<template>
+	<view>
+		<view ref='viewRef' class="defaultClass" hover-class="hoverClass1">
+			<text style="color: #ffffff;">点击 view 会改变颜色</text>
+		</view>
+
+		<view>
+			<button @click="updateStyle">点击会更新 style</button>
+			<view :style="style"></view>
+		</view>
+		<view>
+			<input type="text" placeholder="abc" placeholder-class="inputPlaceholder" />
+			<input type="text" placeholder="abcde" placeholder-style="color:lightblue;font-size: 30px;" />
+
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				val: 0,
+				style0: 'width:100px;height:100px;',
+				style3: {
+					width: '100px',
+					height: '100px'
+				},
+
+			}
+		},
+		computed: {
+			style():String {
+				// let style = {}
+				let style = ''
+				const style1 = 'background:red;'
+				const style2 = 'background:lightblue;'
+				const style4 = {
+					background: 'red'
+				}
+				const style5 = {
+					background: 'lightblue'
+				}
+
+				if (this.val % 2 === 0) {
+					style = this.style0 + style1
+					// style = Object.assign({}, this.style3, style4)
+				} else {
+					style = this.style0 + style2
+					// style = Object.assign({}, this.style3, style5)
+				}
+				return style
+			}
+		},
+		methods: {
+			updateStyle() {
+				this.val += 1
+			}
+		}
+	}
+</script>
+
+<style>
+	.defaultClass {
+		background-color: #000000;
+		height: 80px;
+	}
+
+	.hoverClass1 {
+		background-color: #ff0000;
+	}
+
+	.inputPlaceholder {
+		font-size: 30px;
+		color: #ff0000;
+	}
+</style>

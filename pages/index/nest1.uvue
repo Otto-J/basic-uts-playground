@@ -1,0 +1,37 @@
+<template>
+	<view>
+		<scroll-view>
+			<view ref='viewRef'>
+				<text>text111</text>
+			</view>
+		</scroll-view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+
+		},
+		mounted() {
+			console.log(1)
+			const instance = getCurrentInstance()
+
+			instance?.$waitNativeRender(() => {
+				console.log(111, this.$refs.viewRef.offsetHeight)
+				setTimeout(() => {
+					console.log(222, this.$refs.viewRef.offsetHeight)
+				}, 500)
+			})
+		}
+	}
+</script>
+
+<style>
+
+</style>

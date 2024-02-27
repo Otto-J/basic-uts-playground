@@ -1,0 +1,36 @@
+<template>
+	<!-- #ifdef APP -->
+	<scroll-view style="flex:1">
+	<!-- #endif -->
+
+		<text style="">--button demo--</text>
+		<NButton>default</NButton>
+		<NButton type='primary'>primary</NButton>
+		<NButton type='success'>success</NButton>
+
+	<!-- #ifdef APP -->
+	</scroll-view>
+	<!-- #endif -->
+</template>
+
+<script>
+	// import NButton from '../../components/n-button/button.uvue'
+	import NButton from '../../components/n-button/button.uvue'
+	export default {
+		components: {
+			NButton
+		},
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+
+</style>

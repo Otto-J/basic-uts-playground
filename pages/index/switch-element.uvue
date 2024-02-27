@@ -1,0 +1,241 @@
+<template>
+	<view>
+		<view class="uni-padding-wrap uni-common-mt">
+			<view class="uni-title">
+				<text>默认样式</text>
+			</view>
+			<view class="flex-row">
+				<switch class="switch-checked" :checked="checked" @change="switch1Change" />
+				<switch @change="switch2Change" />
+				<!-- <text class="switch-checked-value">{{clickCheckedValue}}</text> -->
+			</view>
+			<view class="uni-title">
+				<text>禁用样式</text>
+			</view>
+			<view class="flex-row">
+				<switch class="switch-checked" :checked="checked" :disabled="true" />
+				<switch :disabled="true" />
+			</view>
+			<view class="uni-title">
+				<text>不同颜色和尺寸的switch</text>
+			</view>
+			<view class="flex-row">
+				<switch class="switch-color-checked" :color="color" style="transform:scale(0.7)" :checked="true" />
+				<switch class="switch-color" :color="color" style="transform:scale(0.7)" />
+			</view>
+			<view class="uni-title">
+				<text>推荐展示样式</text>
+			</view>
+		</view>
+		<view class="uni-list">
+			<view class="uni-list-cell uni-list-cell-padding">
+				<view class="uni-list-cell-db">
+					<text>开启中</text>
+				</view>
+				<switch :checked="true" />
+			</view>
+			<view class="uni-list-cell uni-list-cell-padding">
+				<view class="uni-list-cell-db">
+					<text>关闭</text>
+				</view>
+				<switch />
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: 'switch 开关',
+				checked: true,
+				color: '#FFCC33',
+				clickCheckedValue: true
+			}
+		},
+		methods: {
+			switch1Change: function (e : UniSwitchChangeEvent) {
+				this.clickCheckedValue = e.detail.value
+				console.log('switch1 发生 change 事件，携带值为', e.detail.value)
+			},
+			switch2Change: function (e : UniSwitchChangeEvent) {
+				console.log('switch2 发生 change 事件，携带值为', e.detail.value)
+			}
+		}
+	}
+</script>
+
+<style>
+	.flex-row {
+		flex-direction: row;
+	}
+
+	.uni-padding-wrap {
+		padding: 0 30rpx;
+	}
+
+	.uni-title {
+		/* padding: 20rpx 0; */
+		padding-top: 20rpx;
+		padding-right: 0;
+		padding-bottom: 20rpx;
+		padding-left: 0;
+	}
+
+	.uni-title-text {
+		font-size: 30rpx;
+		font-weight: bold;
+	}
+
+	.uni-subtitle-text {
+		margin-top: 10rpx;
+		font-size: 24rpx;
+		color: #888;
+		font-weight: bold;
+	}
+
+	.uni-common-mb {
+		margin-bottom: 30rpx;
+	}
+
+	.uni-common-pb {
+		padding-bottom: 30rpx;
+	}
+
+	.uni-common-pl {
+		padding-left: 30rpx;
+	}
+
+	.uni-common-mt {
+		margin-top: 30rpx;
+	}
+
+	.uni-hello-text {
+		color: #7A7E83;
+		line-height: 22px;
+	}
+
+	.uni-list {
+		background-color: #FFFFFF;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		border-bottom: 1px solid #c8c7cc;
+	}
+
+	.uni-list-cell {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.uni-list-cell-line {
+		border-bottom: 1px solid #c8c7cc;
+	}
+
+	.uni-list-cell-hover {
+		background-color: #eee;
+	}
+
+	.uni-list-cell-pd {
+		/* padding: 22rpx 30rpx 22rpx 0; */
+		padding-top: 22rpx;
+		padding-right: 30rpx;
+		padding-bottom: 22rpx;
+		padding-left: 0;
+	}
+
+	.uni-list-cell-left {
+		/* padding: 0 30rpx 0 20rpx; */
+		padding-top: 0;
+		padding-right: 30rpx;
+		padding-bottom: 0;
+		padding-left: 20rpx;
+	}
+
+	.uni-list-cell-db,
+	.uni-list-cell-right {
+		flex: 1;
+	}
+
+	.uni-label {
+		width: 210rpx;
+	}
+
+	.uni-input {
+		height: 50rpx;
+		padding-top: 15rpx;
+		padding-right: 25rpx;
+		padding-bottom: 15rpx;
+		padding-left: 25rpx;
+		/* line-height: 50rpx; */
+		font-size: 28rpx;
+		background-color: #FFF;
+		flex: 1;
+		box-sizing: content-box;
+	}
+
+	.uni-flex {
+		/* #ifdef H5 */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+	}
+
+	.uni-flex-item {
+		flex: 1;
+	}
+
+	.uni-row {
+		flex-direction: row;
+	}
+
+	.uni-column {
+		flex-direction: column;
+	}
+
+	.uni-bg-red {
+		background-color: #F76260;
+	}
+
+	.uni-bg-green {
+		background-color: #09BB07;
+	}
+
+	.uni-bg-blue {
+		background-color: #007AFF;
+	}
+
+	.uni-btn-v {
+		padding-top: 10rpx ;
+		padding-bottom: 10rpx ;
+		padding-left: 0;
+		padding-right:  0;
+	}
+
+	.uni-btn {
+		margin-top: 20rpx;
+	}
+
+	.uni-link {
+		color: #576B95;
+		font-size: 26rpx;
+	}
+
+	.uni-center {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.uni-textarea {
+		padding-top: 18rpx;
+		padding-right: 18rpx;
+		padding-bottom: 18rpx;
+		padding-left: 18rpx;
+		line-height: 1.6;
+		font-size: 28rpx;
+	}
+</style>
