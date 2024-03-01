@@ -1,14 +1,12 @@
 <template>
 	<view class="uni-padding-wrap uni-common-mt">
-		<view>
-			<text style="border:1px solid red;width:150px;height: 50px;">{{title}}</text>
-		</view>
+		<text>展示 input 组件</text>
 		<view class="">
-			<input :value='title' type="text" />
+			<input :value='title' type="text" :disabled="true" />
 		</view>
 		<text>input2</text>
 		<input :value='title' @input="onInput" type="text" />
-
+		<text>展示 tabBar</text>
 		<view>
 			<button @click='setTabBarBadge'>点击 setTabBarBadge</button>
 			<button @click='removeTabBarBadge'>removeTabBarBadge</button>

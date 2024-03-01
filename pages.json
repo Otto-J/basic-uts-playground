@@ -1,24 +1,85 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+
+		{
+			"path": "pages/api/index",
+			"style": {
+				"navigationBarTitleText": "api index"
+			}
+		},
+		{
+			"path": "pages/api/setNavigator",
+			"style": {
+				"navigationBarTitleText": "setNavigator",
+				"navigationBarTextStyle": "black"
+
+			}
+		},
+		{
+			"path": "pages/component/index",
+			"style": {
+				"navigationBarTitleText": "component"
+			}
+		},
+		{
+			"path": "pages/form/radio",
+			"style": {
+				"navigationBarTitleText": "component"
+			}
+		},
+		{
+			"path": "pages/form/process",
+			"style": {
+				"navigationBarTitleText": "process"
+			}
+		},
+
+		{
+			"path": "pages/api/pageScrollTo",
+			"style": {
+				"navigationBarTitleText": "pageScrollTo",
+				"navigationBarTextStyle": "black"
+			}
+		},
+
+
+		{
+			"path": "pages/api/pullDownRefresh",
+			"style": {
+				"navigationBarTitleText": "pullDownRefresh",
+				"navigationBarBackgroundColor": "#ff0000",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"backgroundTextStyle": "dark",
+				"onReachBottomDistance": 50,
+				"backgroundColorTop": "#ff0000",
+				"backgroundColorBottom": "#ff0000"
+			}
+		},
+		{
+			"path": "pages/api/getElementById",
+			"style": {
+				"navigationBarTitleText": "getElementById"
+			}
+		},
+		{
+			"path": "pages/form/index",
+			"style": {
+				"navigationBarTitleText": "form index"
+			}
+		},
 		{
 			"path": "pages/index/page1",
 			"style": {
 				"navigationBarTitleText": "page1"
 			}
 		},
-
 		{
 			"path": "pages/index/picker-view",
 			"style": {
 				"navigationBarTitleText": "page1"
 			}
 		},
-
-
-
-
-
-
 		{
 			"path": "pages/index/view-hover",
 			"style": {
@@ -26,21 +87,17 @@
 			}
 		},
 		{
-			"path": "pages/form-comp/input",
+			"path": "pages/form/input-element",
 			"style": {
 				"navigationBarTitleText": "input"
 			}
 		},
-
-
 		{
 			"path": "pages/index/button",
 			"style": {
 				"navigationBarTitleText": "page1"
 			}
 		},
-
-
 		{
 			"path": "pages/index/page2",
 			"style": {
@@ -52,7 +109,12 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app x",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh": true,
+		"backgroundTextStyle": "dark",
+		"onReachBottomDistance": 50,
+		"backgroundColorTop": "#007aff",
+		"backgroundColorBottom": "#09BB07"
 	},
 	"tabBar": {
 		"color": "#007aff",
@@ -72,14 +134,20 @@
 				"iconPath": "static/logo.png",
 				"selectedIconPath": "static/icon1.png"
 			}, {
-				"pagePath": "pages/index/view-hover",
-				"text": "ViewHover",
+				"pagePath": "pages/api/index",
+				"text": "ApiIndex",
 				"iconPath": "static/icon0.png",
 				"selectedIconPath": "static/icon1.png"
 			},
 			{
-				"pagePath": "pages/index/button",
-				"text": "button",
+				"pagePath": "pages/form/index",
+				"text": "Form",
+				"iconPath": "static/icon0.png",
+				"selectedIconPath": "static/icon1.png"
+			},
+			{
+				"pagePath": "pages/component/index",
+				"text": "Component",
 				"iconPath": "static/icon0.png",
 				"selectedIconPath": "static/icon1.png"
 			}
