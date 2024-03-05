@@ -2,6 +2,18 @@
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 
 		{
+			"path": "pages/dom/index",
+			"style": {
+				"navigationBarTitleText": "dom index"
+			}
+		},
+		{
+			"path": "pages/dom/element",
+			"style": {
+				"navigationBarTitleText": "element index"
+			}
+		},
+		{
 			"path": "pages/api/index",
 			"style": {
 				"navigationBarTitleText": "api index"
@@ -12,11 +24,16 @@
 			"style": {
 				"navigationBarTitleText": "setNavigator",
 				"navigationBarTextStyle": "black"
-
 			}
 		},
 		{
 			"path": "pages/component/index",
+			"style": {
+				"navigationBarTitleText": "component"
+			}
+		},
+		{
+			"path": "pages/api/loadFont",
 			"style": {
 				"navigationBarTitleText": "component"
 			}
@@ -135,7 +152,7 @@
 				"selectedIconPath": "static/icon1.png"
 			}, {
 				"pagePath": "pages/api/index",
-				"text": "ApiIndex",
+				"text": "Api",
 				"iconPath": "static/icon0.png",
 				"selectedIconPath": "static/icon1.png"
 			},

@@ -1,0 +1,53 @@
+<template>
+	<view>
+		<text id="text">navigatorBar</text>
+		<button @click='setNavigatorBarColor'>setNavigatorBarColor</button>
+		<button @click='setNavigationBarTitle'>setNavigationBarTitle</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				val: 0,
+			}
+		},
+		methods: {
+			setNavigatorBarColor() {
+				this.val += 1
+				const times = this.val % 2 === 0;
+				uni.setNavigationBarColor({
+					frontColor: times ? "#ffffff" : "#000000",
+					backgroundColor: times ? "#00ff00" : '#ff0000',
+					success() {
+						console.log('设置成功')
+					},
+					fail() {
+						console.log('设置失败')
+					},
+					complete() {
+						console.log('完成')
+					}
+				})
+			},
+			setNavigationBarTitle() {
+				this.val += 1
+				const times = this.val % 2 === 0;
+
+				uni.setNavigationBarTitle({
+					title: times ? '567' : '1234',
+					success() {
+						console.log('设置成功')
+					},
+					fail() {
+						console.log('设置失败')
+					},
+					complete() {
+						console.log('完成')
+					}
+				})
+			}
+		}
+	}
+</script>

@@ -27,10 +27,10 @@
         if (selected != null) {
           this.current = selected.value
           this.$emit('change', this.current)
-          uni.showToast({
-            icon: 'none',
-            title: '当前选中:' + selected.name,
-          })
+          // uni.showToast({
+          //   icon: 'none',
+          //   title: '当前选中:' + selected.name,
+          // })
         }
       }
     }

@@ -1,0 +1,108 @@
+<template>
+	<view style="flex: 1;">
+		<buttton type='primary' @click="startpdr">start pull refesh</buttton>
+
+
+		<!-- 		:refresher-enabled='true' :refresher-threshold='45' refresher-default-style='black'
+			:refresher-triggered='isRefreshing' refresher-background='#fff' @refresherpulling='refresherpulling'
+			@refresherrefresh='refresherrefresh' @refresherrestore='refresherrestore' @refresherabort='refresherabort -->
+
+		<!-- 实际开发中，长列表应该使用list-view -->
+		<view class="uni-padding-wrap uni-common-mt">
+			<text class="text" v-for="(num,index) in data2" :key="index">list - {{num}}</text>
+			<view v-if="showLoadMore">{{loadMoreText}}</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				data2: [] as Array<number>,
+				loadMoreText: "加载中...",
+				showLoadMore: false,
+				max: 0,
+				isRefreshing: false
+			}
+		},
+		onLoad() {
+			this.initData();
+		},
+		onReachBottom() {
+			console.log("onReachBottom");
+			if (this.max > 40) {
+				this.loadMoreText = "没有更多数据了!"
+				return;
+			}
+			this.showLoadMore = true;
+			setTimeout(() => {
+				this.setListData();
+			}, 300);
+		},
+		onPullDownRefresh() {
+			console.log('5,onPullDownRefresh');
+			this.initData();
+		},
+
+		methods: {
+			startpdr() {
+				console.log(1)
+				uni.startPullDownRefresh()
+			},
+			refresherpulling(e : UniRefresherEvent) {
+				console.log(1, e)
+
+				setTimeout(() => {
+					this.isRefreshing = false;
+				}, 5000)
+			},
+			refresherrefresh(e : UniRefresherEvent) {
+				this.isRefreshing = true
+				console.log(2, e)
+			},
+			refresherrestore(e : UniRefresherEvent) {
+				console.log(3, e)
+			},
+			refresherabort(e : UniRefresherEvent) {
+				console.log(4, e)
+			},
+
+
+			initData() {
+				setTimeout(() => {
+					this.max = 0;
+					this.data2 = [];
+					let data : Array<number> = [];
+					this.max += 20;
+					for (let i : number = this.max - 19; i < this.max + 1; i++) {
+						data.push(i)
+					}
+					this.data2 = this.data2.concat(data);
+					uni.stopPullDownRefresh();
+				}, 300);
+			},
+			setListData() {
+				let data : Array<number> = [];
+				this.max += 10;
+				for (let i : number = this.max - 9; i < this.max + 1; i++) {
+					data.push(i)
+				}
+				this.data2 = this.data2.concat(data);
+			}
+		}
+	}
+</script>
+
+<style>
+	.text {
+		margin: 6px 0;
+		width: 100%;
+		background-color: #fff;
+		height: 52px;
+		line-height: 52px;
+		text-align: center;
+		color: #555;
+		border-radius: 4px;
+	}
+</style>

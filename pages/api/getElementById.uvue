@@ -1,0 +1,51 @@
+<template>
+	<view style="margin-top: 50px;">
+		<text id="text">展示文本 id=text</text>
+		<button @click='getId'>改变文本样式</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		components: {
+		},
+		data() {
+			return {
+				val: 0,
+			}
+		},
+		mounted() {
+		},
+		methods: {
+			getId() {
+				// if (uni.getElementById == null) {
+				// 	console.log('55')
+				// }
+				const textNode = uni.getElementById('text')
+				// if (textNode == null) {
+				// 	return
+				// }
+				textNode!.style.setProperty('color', 'white')
+				textNode!.style.setProperty('width', '90%')
+				textNode!.style.setProperty('height', '50px')
+				textNode!.style.setProperty('background-color', '#007AFF')
+			}
+		}
+	}
+</script>
+
+<style>
+	.defaultClass {
+		background-color: #000000;
+		height: 80px;
+	}
+
+	.hoverClass1 {
+		background-color: #ff0000;
+	}
+
+	.inputPlaceholder {
+		font-size: 30px;
+		color: #ff0000;
+	}
+</style>

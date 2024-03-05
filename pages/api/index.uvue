@@ -1,0 +1,36 @@
+<template>
+	<view>
+		<navigator url='/pages/api/setNavigator'>
+			<button>setNavigator</button>
+		</navigator>
+		<navigator url="/pages/api/getElementById">
+			<button>getElementById</button>
+		</navigator>
+		<navigator url="/pages/api/pullDownRefresh">
+			<button>pullDownRefresh</button>
+		</navigator>
+		<navigator url="/pages/api/pageScrollTo">
+			<button>pageScrollTo</button>
+		</navigator>
+		<navigator url="/pages/api/loadFont">
+			<button style="color: red;">load font</button>
+		</navigator>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+
+</style>

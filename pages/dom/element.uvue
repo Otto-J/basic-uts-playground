@@ -1,0 +1,84 @@
+<template>
+	<view>
+
+		<view id="content">
+			<view>
+				<text style="color: lightcoral;background-color: lightseagreen;">hello</text>
+				<text style="color: lightgreen;color: lightcoral;">world</text>
+				<button type='primary'>primary</button>
+				<button type="warn">warn</button>
+			</view>
+		</view>
+		<button @click="takeSnapShot">take snapshot</button>
+		<!-- <p>{{ tempFilePath}}</p> -->
+		<!-- <image v-if="tempFilePath" :src="tempFilePath" @error="onImageLoadError"></image> -->
+
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				tempFilePath: '/Users/otto/Library/Developer/CoreSimulator/Devices/79FEB78D-E6F7-44E3-9741-44F6DAD53BC0/data/Containers/Data/Application/DFD4EEA9-B905-457C-9672-9D8D366DF747/Library/Caches/uni-app-x/uni-snapshot/1709533868.766815.png'
+			}
+		},
+		methods: {
+			loadImage() {
+				const fileManger = uni.getFileSystemManager()
+
+				fileManger.stat({
+					path: this.tempFilePath,
+					recursive: true,
+					success(res) {
+						console.log('stat success', res)
+					},
+					fail(res) {
+						console.log('stat fail', res)
+					},
+					complete(res) {
+						console.log('stat complete', res)
+					}
+				})
+				// fileManger.readFile({
+				// 	filePath: this.tempFilePath,
+				// 	encoding: 'base64',
+				// 	success(res) {
+				// 		console.log('read success', res)
+				// 	},
+				// 	fail(res) {
+				// 		console.log('read fail', res)
+				// 	}
+				// })
+			},
+			onImageLoadError(e : UniImageErrorEvent) {
+				console.log('load err', e)
+			},
+			takeSnapShot() {
+				const view = uni.getElementById('content')
+				
+				// this.loadImage()
+				// console.log(1, view)
+				view?.takeSnapshot({
+					type: 'file',
+					format: 'png',
+					success:(res : TakeSnapshotSuccess)=> {
+						console.log(2, res)
+						this.tempFilePath = res.tempFilePath
+					},
+					fail(res : TakeSnapshotFail) {
+						console.log(3, res)
+					},
+					complete(res : any) {
+						console.log(4, res)
+					},
+
+				})
+			}
+		}
+	}
+</script>
+
+<style>
+
+</style>

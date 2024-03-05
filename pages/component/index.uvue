@@ -1,0 +1,25 @@
+<template>
+	<view>
+		<navigator url="/pages/form/process">
+
+			<text>progress</text>
+		</navigator>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+
+</style>

@@ -1,0 +1,26 @@
+<template>
+	<view>
+		<navigator url="/pages/dom/element">
+			<button class="btn-item">element</button>
+		</navigator>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+	.btn-item {
+		margin-bottom: 10px;
+	}
+</style>

@@ -1,0 +1,27 @@
+<template>
+	<view>
+		<navigator url="/pages/form/input-element">
+			<text>input element</text>
+		</navigator>
+		<navigator url="/pages/form/radio">
+			<text>radio element</text>
+		</navigator>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+
+</style>
