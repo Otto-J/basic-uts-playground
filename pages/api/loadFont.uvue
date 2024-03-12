@@ -1,5 +1,5 @@
 <template>
-	<text title="loadFontFace">{{loadFontFace}}</text>
+	<text title="loadFontFace">loadFontFace</text>
 	<view class="uni-padding-wrap">
 		<text class="font-size-20">全局加载字体：</text>
 		<text class="font-size-20 line-height-40" style="font-family: UniFontFamily">font-family: uni.ttf</text>
@@ -33,19 +33,22 @@
 			}
 		},
 		onLoad() {
+			
+			
+			
+			if(uni.loadFontFace){
+			
 			uni.loadFontFace({
-				global: true,
+				// global: true,
 				family: 'UniFontFamily',
 				source: "url('/static/uni.ttf')",
-				success() {
-					console.log('global loadFontFace uni.ttf success')
-				},
-				fail(error) {
-					console.warn('global loadFontFace uni.ttf fail', error.errMsg)
+			
+				complete() {
+					console.log('global loadFontFace uni.ttf complete')
 				},
 			})
 			uni.loadFontFace({
-				global: true,
+				// global: true,
 				family: 'AlimamaDaoLiTiTTF',
 				source:
 					"url('https://qiniu-web-assets.dcloud.net.cn/uni-app-x/static/font/AlimamaDaoLiTi.ttf')",
@@ -57,7 +60,7 @@
 				},
 			})
 			uni.loadFontFace({
-				global: true,
+				// global: true,
 				family: 'AlimamaDaoLiTiOTF',
 				source: "url('/static/AlimamaDaoLiTi.otf')",
 				success() {
@@ -68,7 +71,7 @@
 				},
 			})
 			uni.loadFontFace({
-				global: true,
+				// global: true,
 				family: 'AlimamaDaoLiTiWOFF',
 				source: "url('/static/AlimamaDaoLiTi.woff')",
 				success() {
@@ -79,7 +82,7 @@
 				},
 			})
 			uni.loadFontFace({
-				global: true,
+				// global: true,
 				family: 'AlimamaDaoLiTiWOFF2',
 				source: "url('/static/AlimamaDaoLiTi.woff2')",
 				success() {
@@ -89,12 +92,15 @@
 					console.warn('loadFontFace AlimamaDaoLiTi.woff2 fail', error.errMsg)
 				},
 			})
+			}else{
+				console.log('uni.load')
+			}
 		},
 		methods: {
 			navigateToChild() {
-				// uni.navigateTo({
-				// 	url: '/pages/API/load-font-face/load-font-face-child',
-				// })
+				uni.navigateTo({
+					url: '/pages/dom/index',
+				})
 			},
 		},
 	}

@@ -3,7 +3,6 @@
 		<button @click="goScroll">滚动</button>
 		<text>滚动页面之后，再点击，观察控制台的 scrollTop 是否</text>
 		<button @click="consoleV">打印</button>
-		<view v-for='item of 20'>scroll-view</view>
 	</scroll-view>
 </template>
 

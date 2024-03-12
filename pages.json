@@ -1,10 +1,33 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-
 		{
-			"path": "pages/dom/index",
+			"path": "pages/index/page1",
 			"style": {
-				"navigationBarTitleText": "dom index"
+				"navigationBarTitleText": "page1"
+			}
+		},
+		{
+			"path": "pages/api/loadFont",
+			"style": {
+				"navigationBarTitleText": "component"
+			}
+		},
+		{
+			"path": "pages/api/loadfont-css",
+			"style": {
+				"navigationBarTitleText": "load font css"
+			}
+		},
+		{
+			"path": "pages/api/event-bus",
+			"style": {
+				"navigationBarTitleText": "event-bus"
+			}
+		},
+		{
+			"path": "pages/api/interceptor",
+			"style": {
+				"navigationBarTitleText": "interceptor"
 			}
 		},
 		{
@@ -14,11 +37,24 @@
 			}
 		},
 		{
+			"path": "pages/dom/createSelectrorQuery",
+			"style": {
+				"navigationBarTitleText": "createSelectrorQuery"
+			}
+		},
+		{
 			"path": "pages/api/index",
 			"style": {
 				"navigationBarTitleText": "api index"
 			}
 		},
+		{
+			"path": "pages/dom/index",
+			"style": {
+				"navigationBarTitleText": "dom index"
+			}
+		},
+
 		{
 			"path": "pages/api/setNavigator",
 			"style": {
@@ -32,12 +68,7 @@
 				"navigationBarTitleText": "component"
 			}
 		},
-		{
-			"path": "pages/api/loadFont",
-			"style": {
-				"navigationBarTitleText": "component"
-			}
-		},
+
 		{
 			"path": "pages/form/radio",
 			"style": {
@@ -85,12 +116,7 @@
 				"navigationBarTitleText": "form index"
 			}
 		},
-		{
-			"path": "pages/index/page1",
-			"style": {
-				"navigationBarTitleText": "page1"
-			}
-		},
+
 		{
 			"path": "pages/index/picker-view",
 			"style": {

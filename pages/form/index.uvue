@@ -1,10 +1,13 @@
 <template>
 	<view>
 		<navigator url="/pages/form/input-element">
-			<text>input element</text>
+			<button>input element</button>
 		</navigator>
 		<navigator url="/pages/form/radio">
-			<text>radio element</text>
+			<button>radio element</button>
+		</navigator>
+		<navigator url="/pages/dom/index">
+			<button>dom api</button>
 		</navigator>
 	</view>
 </template>

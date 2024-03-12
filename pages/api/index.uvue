@@ -13,7 +13,16 @@
 			<button>pageScrollTo</button>
 		</navigator>
 		<navigator url="/pages/api/loadFont">
-			<button style="color: red;">load font</button>
+			<button>load font</button>
+		</navigator>
+		<navigator url="/pages/api/loadfont-css">
+			<button>load font css</button>
+		</navigator>
+		<navigator url="/pages/api/event-bus">
+			<button>event bus</button>
+		</navigator>
+		<navigator url="/pages/api/interceptor">
+			<button style="color: red;">interceptor</button>
 		</navigator>
 	</view>
 </template>

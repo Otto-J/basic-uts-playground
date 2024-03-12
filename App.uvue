@@ -36,11 +36,22 @@
 
 <style>
 	/*每个页面公共css */
-/* 	.uni-row {
+	/* 	.uni-row {
 		flex-direction: row;
 	}
 
 	.uni-column {
 		flex-direction: column;
 	} */
+
+
+	@font-face {
+		font-family: AlimamaDaoLiTiTTF;
+		src: url('https://qiniu-web-assets.dcloud.net.cn/uni-app-x/static/font/AlimamaDaoLiTi.ttf');
+	}
+
+	@font-face {
+		font-family: AlimamaDaoLiTiOTF;
+		src: url('/static/AlimamaDaoLiTi.otf');
+	}
 </style>

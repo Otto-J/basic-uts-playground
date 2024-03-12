@@ -3,6 +3,17 @@
 		<navigator url="/pages/dom/element">
 			<button class="btn-item">element</button>
 		</navigator>
+
+		<navigator url="/pages/dom/createSelectrorQuery">
+			<button class="btn-item">pages/dom/createSelectrorQuery</button>
+		</navigator>
+
+
+
+
+		<text class="font-size-20 line-height-40" style="font-family: AlimamaDaoLiTiTTF">111 -font-family: 阿里妈妈刀隶体-ttf
+			(网络字体下载后生效)</text>
+
 	</view>
 </template>
 

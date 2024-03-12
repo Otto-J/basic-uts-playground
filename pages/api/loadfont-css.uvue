@@ -1,0 +1,37 @@
+<template>
+	<view class="uni-padding-wrap">
+		<text class="common" style="font-family: AlimamaDaoLiTiOTF">font-family: 阿里妈妈刀隶体-otf</text>
+	</view>
+</template>
+
+<script lang="uts">
+	export default {
+		data() {
+			return {
+				uniIcon: '\ue100',
+			}
+		}
+	}
+</script>
+
+<style>
+	.common {
+		font-size: 20px;
+		line-height: 40px;
+	}
+
+/* 	@font-face {
+		font-family: AlimamaDaoLiTiTTF;
+		src: url('https://qiniu-web-assets.dcloud.net.cn/uni-app-x/static/font/AlimamaDaoLiTi.ttf');
+	}
+
+	@font-face {
+		font-family: AlimamaDaoLiTiOTF;
+		src: url('/static/AlimamaDaoLiTi.otf');
+	} */
+
+	/* @font-face {
+		font-family: UniFontFamily;
+		src: url('./uni.ttf');
+	} */
+</style>

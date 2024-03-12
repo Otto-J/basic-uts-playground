@@ -10,6 +10,7 @@
 			</view>
 		</view>
 		<button @click="takeSnapShot">take snapshot</button>
+		<button @click='pageView'>page view to temp file</button>
 		<!-- <p>{{ tempFilePath}}</p> -->
 		<!-- <image v-if="tempFilePath" :src="tempFilePath" @error="onImageLoadError"></image> -->
 
@@ -24,6 +25,31 @@
 			}
 		},
 		methods: {
+			pageView() {
+				const pages = getCurrentPages()
+				const page = pages[pages.length - 1]
+
+				const appPage = page.$nativePage
+				// page.$page.id
+				appPage.viewToTempFilePath({
+					id: 0,//null, //page.$page.id,
+					offsetX: 0,
+					offsetY: 0,
+					wholeContent: true,
+					path: 'aaa',
+					overwrite: true,
+					success(res : any) {
+						console.log(11, res)
+					},
+					fail(res : any) {
+						console.log(22, res)
+					},
+					complete(res : any) {
+						console.log(33, res)
+					},
+				}
+				)
+			},
 			loadImage() {
 				const fileManger = uni.getFileSystemManager()
 
@@ -56,13 +82,13 @@
 			},
 			takeSnapShot() {
 				const view = uni.getElementById('content')
-				
+
 				// this.loadImage()
 				// console.log(1, view)
 				view?.takeSnapshot({
 					type: 'file',
 					format: 'png',
-					success:(res : TakeSnapshotSuccess)=> {
+					success: (res : TakeSnapshotSuccess) => {
 						console.log(2, res)
 						this.tempFilePath = res.tempFilePath
 					},
